@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PackingCygest.View.DelItem"
+             xmlns:local="clr-namespace:PackingCygest.Utils"
+             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             BackgroundColor="{StaticResource BackgroundColor}"
+             xmlns:controls="clr-namespace:PackingCygest.Controls"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+			     iOS="0,20,0,0">
+        </OnPlatform>
+    </ContentPage.Padding>
+    
+    <ContentPage.Content>
+        <StackLayout >
+            <Grid Padding="5" BackgroundColor="{StaticResource ComponentBackgroundColor}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                Grid.Row="0"
+                Grid.Column="0"
+                BackgroundColor="White"
+                Image="Back_button_arrow.png"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start"
+                Command="{Binding Back}"
+                />
+
+
+                <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                Text="{Binding LblHeading, Mode=TwoWay}"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                FontSize="Large"/>
+
+                <ActivityIndicator
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    IsEnabled="{Binding HasActivtyLoad, Mode=TwoWay}"
+                    IsRunning="{Binding HasActivtyLoad, Mode=TwoWay}"
+                    IsVisible="{Binding HasActivtyLoad, Mode=TwoWay}"
+                    Color="{StaticResource ActivityIndicatorColor}" />
+            </Grid>
+
+            <Grid Margin="10,0,10,0" BackgroundColor="{StaticResource ComponentBackgroundColor}">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="{Binding TxtBarcode}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="2" FontSize="34"/>
+                <Label Text="{Binding TxtRoom}" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label Text="{Binding TxtName}" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+
+            </Grid>
+
+            <StackLayout Spacing="0">
+                <ListView ItemsSource="{Binding ItemsInformation}" ItemSelected="ListView_ItemSelected" x:Name="listView" RowHeight="40" BackgroundColor="{StaticResource ComponentBackgroundColor}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding ItemDetail}" HorizontalTextAlignment="Start" VerticalOptions="Center" Margin="10,0,0,0"></Label>
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding ItemDetailValue}" HorizontalTextAlignment="Center" VerticalOptions="Center" Font="Bold" ></Label>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+
+            <cv:CarouselView ItemsSource="{Binding MyCarousel}"  Margin="25,5,25,5" Position="{Binding Position, Mode=TwoWay}">
+                    <cv:CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Image Aspect="AspectFill" Source="{Binding .}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </cv:CarouselView.ItemTemplate>
+            </cv:CarouselView>
+            <local:CarouselIndicators IndicatorHeight="10" IndicatorWidth="10" UnselectedIndicator="unselected_circle.png" SelectedIndicator="selected_circle.png" Position="{Binding Position}" ItemsSource="{Binding MyCarousel}" />
+
+            <Label Text="{Binding LoadingComment}"  HorizontalTextAlignment="Start" Margin="25,1,25,1" BackgroundColor="{StaticResource ComponentBackgroundColor}"/>
+
+            <controls:SvgIcon  
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center"
+                        HeightRequest="40"
+                        ResourceId="{Binding SvgPathTakePhoto}"
+                        WidthRequest="40"
+                        Margin="0,15,0,0">
+                <controls:SvgIcon.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TakePhoto}"/>
+                </controls:SvgIcon.GestureRecognizers>
+            </controls:SvgIcon>
+            
+            <Button Text="    OK    "  Command="{Binding SaveItemAndGoBackToDeliveryControl}" BackgroundColor="{StaticResource  RedTextColor}" TextColor="{StaticResource ComponentBackgroundColor}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

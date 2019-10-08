@@ -1,0 +1,75 @@
+﻿<ContentPage
+    x:Class="PackingCygest.View.TakePhotoMenu"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PackingCygest.Controls"
+    BackgroundColor="{StaticResource BackgroundColor}"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Padding="5" BackgroundColor="{StaticResource ComponentBackgroundColor}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    HorizontalOptions="Start"
+                    Image="Back_button_arrow.png"
+                    VerticalOptions="Center" />
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="Small"
+                    HorizontalOptions="Center"
+                    Text="  PHOTO AND COMMENT"
+                    VerticalOptions="Center" />
+
+                <ActivityIndicator
+                    x:Name="CongifActivity"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    IsEnabled="False"
+                    IsRunning="False" />
+            </Grid>
+
+            <Frame
+                Margin="20"
+                BackgroundColor="{StaticResource ComponentBackgroundColor}"
+                HeightRequest="500">
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Orientation="Vertical"
+                    VerticalOptions="Center">
+
+                    <controls:SvgIcon
+                        HeightRequest="50"
+                        HorizontalOptions="Center"
+                        ResourceId="{Binding SvgPathAdd}"
+                        VerticalOptions="Center"
+                        WidthRequest="50" />
+
+                    <Label
+                        Margin="0,10,0,0"
+                        Text="Your Photo"
+                        TextColor="{StaticResource RedTextColor}" />
+
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

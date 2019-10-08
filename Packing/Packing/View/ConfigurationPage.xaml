@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PackingCygest.View.ConfigurationPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PackingCygest.Controls"
+    xmlns:local="clr-namespace:PackingCygest.Utils"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,15" />
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <AbsoluteLayout
+            BackgroundColor="White"
+            IsEnabled="{Binding MainStackLayout, Mode=TwoWay}"
+            Opacity="{Binding PackingCygestPageLayoutOpacity, Mode=TwoWay}">
+
+            <StackLayout x:Name="ConfigurationPageLayout" BackgroundColor="White">
+
+                <Grid Padding="0,5,0,0" BackgroundColor="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="7*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button
+                        x:Name="ArrowBack"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        BackgroundColor="White"
+                        Command="{Binding GoToPackingCygest}"
+                        HorizontalOptions="Start"
+                        Image="Back_button_arrow.png"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        x:Name="LblConfig"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        FontAttributes="Bold"
+                        FontSize="13"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding LblConfig, Mode=TwoWay}"
+                        TextColor="{StaticResource SecondaryTextColor}"
+                        VerticalTextAlignment="Center" />
+
+                </Grid>
+
+                <!--  Header End  -->
+
+                <StackLayout BackgroundColor="#f5f5f5" HeightRequest="30" />
+
+                <StackLayout>
+                    <Grid Padding="10,0,0,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="9*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Label
+                            x:Name="LblCountry"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            FontAttributes="Bold"
+                            FontFamily="OpenSans"
+                            FontSize="14"
+                            HorizontalOptions="StartAndExpand"
+                            Text="{Binding Path=PckCountry, Mode=TwoWay}"
+                            TextColor="{StaticResource SecondaryTextColor}"
+                            VerticalOptions="Center" />
+                        <local:BorderlessPicker
+                            x:Name="CountryPicker"
+                            Title="{Binding Path=PckCountryDisplay}"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            HeightRequest="45"
+                            HorizontalOptions="FillAndExpand"
+                            ItemDisplayBinding="{Binding Name}"
+                            ItemsSource="{Binding Path=Countries, Mode=TwoWay}"
+                            SelectedIndexChanged="CountryPicker_SelectedIndexChanged"
+                            VerticalOptions="Center"
+                            WidthRequest="40" />
+                        <controls:SvgIcon
+                            Grid.Row="0"
+                            Grid.Column="3"
+                            BackgroundColor="White"
+                            HeightRequest="10"
+                            HorizontalOptions="Center"
+                            ResourceId="{Binding FillSvg}"
+                            VerticalOptions="Center"
+                            WidthRequest="10" />
+
+                        <Label
+                            x:Name="LblMobNum"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            FontAttributes="Bold"
+                            FontFamily="OpenSans"
+                            FontSize="14"
+                            Text="{Binding Path=MobileNumberPlaceholder, Mode=TwoWay}"
+                            TextColor="{StaticResource SecondaryTextColor}"
+                            VerticalOptions="Center" />
+
+
+                        <Entry
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            FontSize="18"
+                            HorizontalOptions="StartAndExpand"
+                            IsEnabled="False"
+                            Text="{Binding TelCode, Mode=TwoWay}"
+                            TextColor="Black"
+                            VerticalOptions="StartAndExpand" />
+                        <Entry
+                            x:Name="NumberEntry"
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            HorizontalOptions="FillAndExpand"
+                            Keyboard="Numeric"
+                            Placeholder="{Binding Path=MobileNumberplaceholderDisplay}"
+                            Text="{Binding MobileNumber, Mode=TwoWay}"
+                            VerticalOptions="CenterAndExpand" />
+
+
+                        <controls:SvgIcon
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            BackgroundColor="White"
+                            HeightRequest="10"
+                            HorizontalOptions="Center"
+                            ResourceId="{Binding FillSvg}"
+                            VerticalOptions="Center"
+                            WidthRequest="10" />
+
+                        <Label
+                            x:Name="LblBranch"
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            FontAttributes="Bold"
+                            FontFamily="OpenSans"
+                            FontSize="14"
+                            HorizontalOptions="StartAndExpand"
+                            Text="{Binding Path=PckBranch, Mode=TwoWay}"
+                            TextColor="{StaticResource SecondaryTextColor}"
+                            VerticalOptions="Center" />
+                        <local:BorderlessPicker
+                            x:Name="BranchPicker"
+                            Title="{Binding Path=PckBranchDisplay}"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            HeightRequest="45"
+                            HorizontalOptions="FillAndExpand"
+                            ItemDisplayBinding="{Binding Name}"
+                            ItemsSource="{Binding Branch, Mode=TwoWay}"
+                            SelectedIndexChanged="BranchPicker_SelectedIndexChanged"
+                            VerticalOptions="Center"
+                            WidthRequest="40" />
+                        <controls:SvgIcon
+                            Grid.Row="2"
+                            Grid.Column="3"
+                            BackgroundColor="White"
+                            HeightRequest="10"
+                            HorizontalOptions="Center"
+                            
+                            ResourceId="{Binding FillSvg}"
+                            VerticalOptions="Center"
+                            WidthRequest="10" />
+
+                        <Label
+                            x:Name="LblLanguage"
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            FontAttributes="Bold"
+                            FontFamily="OpenSans"
+                            FontSize="14"
+                            HorizontalOptions="StartAndExpand"
+                            Text="{Binding Path=PckLanguage, Mode=TwoWay}"
+                            TextColor="{StaticResource SecondaryTextColor}"
+                            VerticalOptions="Center" />
+                        <local:BorderlessPicker
+                            x:Name="LanguagePicker"
+                            Title="{Binding Path=PckLanguageDisplay}"
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="2"
+                            HorizontalOptions="FillAndExpand"
+                            ItemDisplayBinding="{Binding Name}"
+                            ItemsSource="{Binding Languages, Mode=TwoWay}"
+                            SelectedIndexChanged="LanguagePicker_SelectedIndexChanged"
+                            VerticalOptions="Center" />
+                        <controls:SvgIcon
+                            Grid.Row="3"
+                            Grid.Column="3"
+                            BackgroundColor="White"
+                            HeightRequest="10"
+                            HorizontalOptions="Center"
+                            
+                            ResourceId="{Binding FillSvg}"
+                            VerticalOptions="Center"
+                            WidthRequest="10" />
+                    </Grid>
+                    <StackLayout Padding="10,0,30,0" Orientation="Horizontal">
+                        <Label
+                            x:Name="LblPhoto"
+                            FontAttributes="Bold"
+                            FontFamily="OpenSans"
+                            FontSize="14"
+                            HorizontalOptions="StartAndExpand"
+                            Text="{Binding Path=PckPhotoQuality, Mode=TwoWay}"
+                            TextColor="{StaticResource SecondaryTextColor}"
+                            VerticalOptions="Center" />
+
+                        <StackLayout
+                            Padding="0,4,0,4"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <Image
+                                Aspect="AspectFit"
+                                HeightRequest="40"
+                                Source="{Binding LowClickImageSource, Mode=TwoWay}"
+                                WidthRequest="65" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding LowClicked}" NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+
+                        <StackLayout
+                            Padding="3,4,0,4"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <Image
+                                Aspect="AspectFit"
+                                HeightRequest="40"
+                                Source="{Binding MediumClickImageSource, Mode=TwoWay}"
+                                WidthRequest="65" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding MediumClicked}" NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+
+                        <StackLayout
+                            Padding="3,4,0,4"
+                            Orientation="Horizontal"
+                            VerticalOptions="Center">
+                            <Image
+                                Aspect="AspectFit"
+                                HeightRequest="40"
+                                Source="{Binding HighClickImageSource, Mode=TwoWay}"
+                                WidthRequest="65" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding HighClicked}" NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout
+                        Margin="30,30,0,0"
+                        BackgroundColor="White"
+                        Orientation="Horizontal">
+                        <Label
+                            FontSize="Medium"
+                            Text="{Binding PckAssistance, Mode=TwoWay}"
+                            TextColor="{StaticResource OkButton}">
+                            <Label.Effects>
+                                <local:UnderlineEffect />
+                            </Label.Effects>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding DumpClick}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+
+                </StackLayout>
+
+            </StackLayout>
+
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,1,1,50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+                <StackLayout
+                    AbsoluteLayout.LayoutBounds="0,1,1,1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    VerticalOptions="EndAndExpand">
+                    <Button
+                        BackgroundColor="{StaticResource OkButton}"
+                        Clicked="SaveConfig"
+                        IsEnabled="{Binding NewConfig, Mode=TwoWay}"
+                        Text="OK"
+                        TextColor="White" />
+                </StackLayout>
+            </AbsoluteLayout>
+
+            <StackLayout
+                x:Name="StackAct"
+                AbsoluteLayout.LayoutBounds="0.5,0.5,400,200"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                BackgroundColor="White"
+                HorizontalOptions="Center"
+                IsEnabled="{Binding StackLayoutVisibility}"
+                IsVisible="{Binding StackLayoutVisibility}"
+                Opacity="{Binding ActOpacity}"
+                VerticalOptions="Center">
+                <ActivityIndicator
+                    x:Name="ActivityLayout"
+                    HorizontalOptions="CenterAndExpand"
+                    IsEnabled="{Binding ActivityIndicatorVisibility}"
+                    IsRunning="{Binding ActivityIndicatorVisibility}"
+                    IsVisible="{Binding ActivityIndicatorVisibility}"
+                    VerticalOptions="Center"
+                    Color="#bc0100" />
+                <Label
+                    x:Name="LblLoadingText"
+                    IsVisible="{Binding LblLoadingTextVisibility}"
+                    Text="{Binding Status}"
+                    TextColor="#bc0100" />
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

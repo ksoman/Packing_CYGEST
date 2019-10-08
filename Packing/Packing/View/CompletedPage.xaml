@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PackingCygest.View.CompletedPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PackingCygest.Controls"
+    BackgroundColor="{StaticResource ComponentBackgroundColor}"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Padding="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    Command="{Binding BackToPackingCygest}"
+                    HorizontalOptions="Start"
+                    Image="Back_button_arrow.png"
+                    VerticalOptions="Center" />
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="Medium"
+                    HorizontalOptions="Center"
+                    Text="{Binding LblCompletedTile}"
+                    VerticalOptions="Center" />
+
+                <ActivityIndicator
+                    x:Name="CongifActivity"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    IsEnabled="False"
+                    IsRunning="False" />
+            </Grid>
+
+
+            <StackLayout Padding="0,100,0,0">
+                <controls:SvgIcon
+                    HeightRequest="150"
+                    HorizontalOptions="Center"
+                    ResourceId="{Binding SvgPathCompleted}"
+                    WidthRequest="150" />
+            </StackLayout>
+
+            <StackLayout Padding="0,50,0,0">
+                <Label
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    Text="{Binding LblCompleteMsg1, Mode=TwoWay}"
+                    TextColor="{StaticResource RedTextColor}" />
+                <Label
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    Text="{Binding LblCompleteMsg2, Mode=TwoWay}"
+                    TextColor="{StaticResource RedTextColor}" />
+            </StackLayout>
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

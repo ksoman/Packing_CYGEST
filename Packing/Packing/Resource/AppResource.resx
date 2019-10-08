@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LblConfig" xml:space="preserve">
+    <value>CONFIGURATION</value>
+  </data>
+  <data name="lblDumpNotSent" xml:space="preserve">
+    <value>Dump Not sent</value>
+  </data>
+  <data name="lblDumpSent" xml:space="preserve">
+    <value>Dump was  sent</value>
+  </data>
+  <data name="lblDumpTitle" xml:space="preserve">
+    <value>Dump</value>
+  </data>
+  <data name="MobileNumberPlaceholder" xml:space="preserve">
+    <value>Mobile Number</value>
+  </data>
+  <data name="PckAssistance" xml:space="preserve">
+    <value>Need Assistance?</value>
+  </data>
+  <data name="PckBranch" xml:space="preserve">
+    <value>Branch</value>
+  </data>
+  <data name="PckCountry" xml:space="preserve">
+    <value>Countries</value>
+  </data>
+  <data name="PckLanguage" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="PckPhotoQuality" xml:space="preserve">
+    <value>Photo Quality</value>
+  </data>
+  <data name="lblCancel" xml:space="preserve">
+    <value>Cancel </value>
+  </data>
+  <data name="lblError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="lblNoConnection" xml:space="preserve">
+    <value>No Connection</value>
+  </data>
+  <data name="lblOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="lblSave" xml:space="preserve">
+    <value>Saving Configuration</value>
+  </data>
+  <data name="lblSaveError" xml:space="preserve">
+    <value>An error occurred, cannot save. Please fill in all fields  </value>
+  </data>
+  <data name="lblSaveSuccessfully" xml:space="preserve">
+    <value>Save </value>
+  </data>
+  <data name="LblCategory" xml:space="preserve">
+    <value>CATEGORY</value>
+  </data>
+  <data name="LblItem" xml:space="preserve">
+    <value>SELECT ITEM</value>
+  </data>
+  <data name="LblRoom" xml:space="preserve">
+    <value>SELECT A ROOM</value>
+  </data>
+  <data name="LblDelivery" xml:space="preserve">
+    <value>DELIVERY</value>
+  </data>
+  <data name="LblNumItem" xml:space="preserve">
+    <value>NUMBER OF ITEMS :</value>
+  </data>
+  <data name="LblNumItemExpct" xml:space="preserve">
+    <value>NUMBER OF ITEMS EXPECTED :</value>
+  </data>
+  <data name="LblNumItemReceived" xml:space="preserve">
+    <value>NUMBER OF ITEMS RECEIVED :</value>
+  </data>
+  <data name="LblProgress" xml:space="preserve">
+    <value>PackingCygest PROGRESS</value>
+  </data>
+  <data name="LblSynchro" xml:space="preserve">
+    <value>SYNCHRONISING</value>
+  </data>
+  <data name="MobileNumberplaceholderDisplay" xml:space="preserve">
+    <value>Mobile Number</value>
+  </data>
+  <data name="PckBranchDisplay" xml:space="preserve">
+    <value>Branch</value>
+  </data>
+  <data name="PckCountryDisplay" xml:space="preserve">
+    <value>Countries</value>
+  </data>
+  <data name="PckLanguageDisplay" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LblInvalidSignature" xml:space="preserve">
+    <value>Please sign on the signature pad</value>
+  </data>
+  <data name="LblSignatureSaveSuccessful" xml:space="preserve">
+    <value>Signature has been saved</value>
+  </data>
+  <data name="LblSuccess" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="LblEndPackingCygest" xml:space="preserve">
+    <value>End PackingCygest</value>
+    <comment>LoadMenu.xaml</comment>
+  </data>
+  <data name="LblNewItem" xml:space="preserve">
+    <value>New Item</value>
+    <comment>LoadMenu.xaml</comment>
+  </data>
+  <data name="LblDelivery1" xml:space="preserve">
+    <value>DELIVERY</value>
+    <comment>DeliveryControlPage.xaml</comment>
+  </data>
+  <data name="LblLoadEndControlTitle" xml:space="preserve">
+    <value>CONTROL</value>
+    <comment>LoadEndControl.xaml</comment>
+  </data>
+  <data name="LblBarcodeMissing" xml:space="preserve">
+    <value>Barcode missing</value>
+    <comment>LoadEndControl.xaml</comment>
+  </data>
+  <data name="CompleteMsg1" xml:space="preserve">
+    <value>Well done,you have</value>
+  </data>
+  <data name="CompleteMsg2" xml:space="preserve">
+    <value>completed your PackingCygest</value>
+  </data>
+  <data name="LblClient" xml:space="preserve">
+    <value>Client</value>
+    <comment>LoadingOption.xaml</comment>
+  </data>
+  <data name="LblControl" xml:space="preserve">
+    <value>CONTROLS</value>
+  </data>
+  <data name="LblDoubleBarcodes" xml:space="preserve">
+    <value>Double barcodes</value>
+    <comment>LoadEndControl.xaml</comment>
+  </data>
+  <data name="LblFurniture" xml:space="preserve">
+    <value>Furniture</value>
+    <comment>LoadEndControl.xaml</comment>
+  </data>
+  <data name="LblHomeAppliance" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="LblFile" xml:space="preserve">
+    <value>File:</value>
+  </data>
+  <data name="LblSize" xml:space="preserve">
+    <value>Size:</value>
+  </data>
+  <data name="LblNumberOfItems" xml:space="preserve">
+    <value>Number of items</value>
+    <comment>LoadEndControl.xaml</comment>
+  </data>
+  <data name="LblDismounting" xml:space="preserve">
+    <value>DISMOUNTING</value>
+    <comment>LoadingOption.xaml</comment>
+  </data>
+  <data name="LblKnown" xml:space="preserve">
+    <value>Known</value>
+    <comment>LoadingOption.xaml</comment>
+  </data>
+  <data name="LblMechanicalState" xml:space="preserve">
+    <value>MECHANICAL STATE</value>
+    <comment>LoadingOption.xaml</comment>
+  </data>
+  <data name="LblMover" xml:space="preserve">
+    <value>Mover</value>
+    <comment>LoadingOption.xaml</comment>
+  </data>
+  <data name="LblReassembling" xml:space="preserve">
+    <value>REASSEMBLING</value>
+    <comment>LoadingOption.xaml</comment>
+  </data>
+  <data name="LblUnknown" xml:space="preserve">
+    <value>Unknown</value>
+    <comment>LoadingOption.xaml</comment>
+  </data>
+  <data name="LoadingTextWait" xml:space="preserve">
+    <value>Please wait..</value>
+  </data>
+  <data name="LoadingTextDone" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="LblScanItemError" xml:space="preserve">
+    <value>Please scan an item first</value>
+  </data>
+  <data name="LblPhotoAndComment" xml:space="preserve">
+    <value>PHOTO AND COMMENT</value>
+  </data>
+  <data name="Delivery" xml:space="preserve">
+    <value>New Delivery</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>New Loading</value>
+  </data>
+  <data name="LoadingData" xml:space="preserve">
+    <value>Loading data..</value>
+  </data>
+  <data name="LblEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="High" xml:space="preserve">
+    <value>High_Button.png</value>
+    <comment>not red Button</comment>
+  </data>
+  <data name="HighRed" xml:space="preserve">
+    <value>High_Button_Red.png</value>
+    <comment>red Button</comment>
+  </data>
+  <data name="Low" xml:space="preserve">
+    <value>Low_Button.png</value>
+    <comment>not red Button</comment>
+  </data>
+  <data name="LowRed" xml:space="preserve">
+    <value>Low_Button_Red.png</value>
+    <comment>red Button</comment>
+  </data>
+  <data name="Medium" xml:space="preserve">
+    <value>Medium_Button.png</value>
+    <comment>not red Button</comment>
+  </data>
+  <data name="MediumRed" xml:space="preserve">
+    <value>Medium_Button_Red.png</value>
+    <comment>red Button</comment>
+  </data>
+  <data name="BtnAdd" xml:space="preserve">
+    <value>ADD</value>
+  </data>
+  <data name="LblEndControlNext" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="LblAssignAnother" xml:space="preserve">
+    <value>OR SCAN BARCODE</value>
+  </data>
+  <data name="LblAssignBarcode" xml:space="preserve">
+    <value>Assign barcode</value>
+  </data>
+  <data name="LblCompletedTile" xml:space="preserve">
+    <value>COMPLETED</value>
+  </data>
+  <data name="NextButton" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="ImageClickToTakePic" xml:space="preserve">
+    <value>Click_to_take_pic.png</value>
+  </data>
+  <data name="MessageScanValidBarcode" xml:space="preserve">
+    <value>Please Scan Valid Barcode</value>
+    <comment>DelControlViewModel</comment>
+  </data>
+  <data name="TitleWrongBarcode" xml:space="preserve">
+    <value>Invalid Barcode</value>
+    <comment>DelControlViewModel </comment>
+  </data>
+  <data name="LblInvalidBarcode" xml:space="preserve">
+    <value>Invalid barcode</value>
+  </data>
+  <data name="LblScanBarcode" xml:space="preserve">
+    <value>No Barcode</value>
+  </data>
+  <data name="MsgInvalidBarcode" xml:space="preserve">
+    <value>Barcode not valid for this file</value>
+  </data>
+  <data name="MsgScanBarcode" xml:space="preserve">
+    <value>Please scan a barcode.</value>
+  </data>
+  <data name="MsgSignatureClear" xml:space="preserve">
+    <value>Signature was clear.</value>
+  </data>
+  <data name="BtnClear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="PhotoCommentTitle" xml:space="preserve">
+    <value>Saving all data.</value>
+  </data>
+  <data name="LblHeading" xml:space="preserve">
+    <value>DELIVERY</value>
+    <comment>Del Item</comment>
+  </data>
+  <data name="LblPackingCygest" xml:space="preserve">
+    <value>PACKED BY</value>
+    <comment>Del Item</comment>
+  </data>
+  <data name="LblReassemble" xml:space="preserve">
+    <value>Reassemble</value>
+    <comment>Del Item</comment>
+  </data>
+  <data name="LblReassembled" xml:space="preserve">
+    <value>Reassembled</value>
+    <comment>Del Item</comment>
+  </data>
+  <data name="LblNoNetwork" xml:space="preserve">
+    <value>No network</value>
+    <comment>N</comment>
+  </data>
+  <data name="LblPleaseEnableYourNetwork" xml:space="preserve">
+    <value>Please enable your network</value>
+    <comment>N</comment>
+  </data>
+  <data name="DeliveryMsg1" xml:space="preserve">
+    <value>Well done,you have</value>
+  </data>
+  <data name="DeliveryMsg2" xml:space="preserve">
+    <value>completed your delivery</value>
+  </data>
+  <data name="TitleAlreadyScannedBarcode" xml:space="preserve">
+    <value>Barcode already scanned</value>
+  </data>
+  <data name="TxtComment" xml:space="preserve">
+    <value>COMMENT</value>
+  </data>
+  <data name="TxtSync" xml:space="preserve">
+    <value>Synchronize</value>
+  </data>
+  <data name="LblMissingBarcode" xml:space="preserve">
+    <value>List of barcode not scanned</value>
+  </data>
+  <data name="lblBarCodeError" xml:space="preserve">
+    <value>Invalide barcode for file</value>
+    <comment>Error file with barcode</comment>
+  </data>
+  <data name="lblPressButton" xml:space="preserve">
+    <value>Press Scan Button</value>
+    <comment>PX320 press button label</comment>
+  </data>
+</root>

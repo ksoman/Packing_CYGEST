@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="PackingCygest.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--  Red  -->
+            <Color x:Key="PrimaryText">#BC0100</Color>
+
+            <!--  Grey  -->
+            <Color x:Key="SecondaryTextColor">#86898D</Color>
+
+            <!--  White  -->
+            <Color x:Key="Backgnd">#FCFBFB</Color>
+
+            <!--  IndianRed  -->
+            <Color x:Key="UnsendMarker">#D04548</Color>
+
+            <!--  lOGO color for activity indicator  -->
+            <Color x:Key="ActivityIndicatorColor">#BA0001</Color>
+
+            <!--  Border  color for activity indicator  -->
+            <Color x:Key="BorderColor">#F5F5F5</Color>
+
+            <!--  Label Color Red for Text  -->
+            <Color x:Key="RedTextColor">#bc0100</Color>
+
+            <!--  App Background Color  -->
+            <Color x:Key="BackgroundColor">#f5f5f5</Color>
+
+            <!--  Componenent Background Color  -->
+            <Color x:Key="ComponentBackgroundColor">#ffffff</Color>
+
+            <!--  Ok - Button on Configuration page  -->
+            <Color x:Key="OkButton">#bc0100</Color>
+
+            <!--  Configuration Background  -->
+            <Color x:Key="ConfigBackgrd">#ffffff</Color>
+
+            <!--  WhiteBackColour #ffffff  -->
+            <Color x:Key="WhiteBackColour">#ffffff</Color>
+
+            <!--  backgroudColour #f5f5f5  -->
+            <Color x:Key="GreyBackColour">#f5f5f5</Color>
+
+
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

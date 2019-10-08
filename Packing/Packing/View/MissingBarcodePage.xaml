@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PackingCygest.View.MissingBarcodePage"
+             BackgroundColor="{StaticResource BackgroundColor}"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
+    </ContentPage.Padding>
+
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Padding="5" BackgroundColor="{StaticResource ComponentBackgroundColor}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    Command="{Binding Back}"
+                    HorizontalOptions="Start"
+                    Image="Back_button_arrow.png"
+                    VerticalOptions="Center" />
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Text=""
+                    VerticalOptions="Center" />
+
+                <ActivityIndicator
+                    x:Name="CongifActivity"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    IsEnabled="{Binding IsDownloading}"
+                    IsRunning="{Binding IsDownloading}" />
+            </Grid>
+
+            <Label
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Text="{Binding LblMissingBarcode}"
+                    FontAttributes="Bold"
+                    BackgroundColor="White"
+/>
+
+            <StackLayout Spacing="0">
+                <ListView
+                    x:Name="listView"
+                    BackgroundColor="White"
+                    ItemSelected="ListView_ItemSelected"
+                    ItemsSource="{Binding MissingBarcodeItem}"
+                    RowHeight="50">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Margin="8,0,0,0"
+                                        HorizontalTextAlignment="Start"
+                                        Text="{Binding .}"
+                                        VerticalOptions="Center" />
+
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

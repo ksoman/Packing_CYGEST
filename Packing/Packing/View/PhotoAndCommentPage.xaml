@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PackingCygest.View.PhotoAndCommentPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PackingCygest.Controls"
+    xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+    xmlns:local="clr-namespace:PackingCygest.Utils"
+    BackgroundColor="{StaticResource BackgroundColor}"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Padding="5" BackgroundColor="{StaticResource ComponentBackgroundColor}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    Command="{Binding SaveAndGoBack}"
+                    HorizontalOptions="Start"
+                    Image="Back_button_arrow.png"
+                    VerticalOptions="Center" />
+
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="Small"
+                    HorizontalOptions="Center"
+                    Text="{Binding LblPhotoAndComment}"
+                    VerticalOptions="Center" />
+
+                <ActivityIndicator
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    IsEnabled="{Binding HasActivtyLoad, Mode=TwoWay}"
+                    IsRunning="{Binding HasActivtyLoad, Mode=TwoWay}"
+                    IsVisible="{Binding HasActivtyLoad, Mode=TwoWay}"
+                    Color="{StaticResource ActivityIndicatorColor}" />
+
+            </Grid>
+            <StackLayout
+                x:Name="stackLabel"
+                Margin="10"
+                BackgroundColor="{StaticResource ComponentBackgroundColor}"
+                HeightRequest="30"
+                IsEnabled="False"
+                IsVisible="False">
+                <Label
+                    x:Name="LabelBarcode"
+                    HorizontalOptions="Center"
+                    IsVisible="False"
+                    VerticalOptions="Center" />
+            </StackLayout>
+            <StackLayout HeightRequest="250">
+                <cv:CarouselView
+                    Margin="25,0,25,10"
+                    ItemsSource="{Binding MyCarousel}"
+                    Position="{Binding Position, Mode=TwoWay}">
+                    <cv:CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Image Aspect="AspectFill" Source="{Binding .}" />
+                            </Grid>
+                        </DataTemplate>
+                    </cv:CarouselView.ItemTemplate>
+                </cv:CarouselView>
+                <local:CarouselIndicators
+                    IndicatorHeight="10"
+                    IndicatorWidth="10"
+                    ItemsSource="{Binding MyCarousel}"
+                    Position="{Binding Position}"
+                    SelectedIndicator="selected_circle.png"
+                    UnselectedIndicator="unselected_circle.png" />
+            </StackLayout>
+
+            <StackLayout
+                Margin="20,10,20,10"
+                BackgroundColor="{StaticResource ComponentBackgroundColor}"
+                HeightRequest="100">
+                <Editor
+                    x:Name="MyEditor"
+                    Completed="MyEditor_Completed"
+                    FontFamily="OpenSans"
+                    FontSize="16"
+                    Keyboard="Default"
+                    TextColor="#8a8b8c"
+                    VerticalOptions="FillAndExpand" />
+            </StackLayout>
+
+
+            <controls:SvgIcon
+                Margin="0,15,0,0"
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                ResourceId="{Binding SvgPathAddComment}"
+                VerticalOptions="Center"
+                WidthRequest="40">
+                <controls:SvgIcon.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AddPhoto}" />
+                </controls:SvgIcon.GestureRecognizers>
+            </controls:SvgIcon>
+
+            <StackLayout
+                x:Name="stackSave"
+                IsVisible="True"
+                VerticalOptions="EndAndExpand">
+                <Button
+                    x:Name="BtnSave"
+                    BackgroundColor="{StaticResource RedTextColor}"
+                    Command="{Binding SaveLoadingDetails}"
+                    IsEnabled="True"
+                    IsVisible="True"
+                    Text="{Binding BtnSave}"
+                    TextColor="{StaticResource ComponentBackgroundColor}"
+                    VerticalOptions="EndAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

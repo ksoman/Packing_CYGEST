@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PackingCygest.View.DelFinalSummary"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PackingCygest.Controls"
+
+    BackgroundColor="{StaticResource BackgroundColor}"
+    NavigationPage.HasNavigationBar="False">
+
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Padding="5" BackgroundColor="{StaticResource ComponentBackgroundColor}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    Command="{Binding Back}"
+                    HorizontalOptions="Start"
+                    Image="Back_button_arrow.png"
+                    VerticalOptions="Center" />
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Text="{Binding LblDelivery, Mode=TwoWay}"
+                    VerticalOptions="Center" />
+
+                <ActivityIndicator
+                    x:Name="CongifActivity"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    IsEnabled="False"
+                    IsRunning="False" />
+            </Grid>
+
+            <Grid Margin="10,0,10,0" BackgroundColor="{StaticResource ComponentBackgroundColor}">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="1*" />
+
+
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HorizontalTextAlignment="Start"
+                    Margin="10,0,0,0"
+                    Text="{Binding LblNumItemExpct, Mode=TwoWay}" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding ExpectedValue}" />
+
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    HorizontalTextAlignment="Start"
+                    Margin="10,0,0,0"
+                    Text="{Binding LblNumItemReceived, Mode=TwoWay}" />
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding RecievedValue}" />
+
+            </Grid>
+            <StackLayout Spacing="0">
+                <ListView
+                    x:Name="listView"
+                    BackgroundColor="White"
+                    ItemSelected="ListView_ItemSelected"
+                    ItemsSource="{Binding Items}"
+                    RowHeight="50">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="3*" />
+                                        <ColumnDefinition Width="10*" />
+                                        <ColumnDefinition Width="2*" />
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <controls:SvgIcon
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        HeightRequest="35"
+                                        HorizontalOptions="Center"
+                                        ResourceId="{Binding SvgPath, Converter={StaticResource SvgImageSourceConverter}}"
+                                        VerticalOptions="Center"
+                                        WidthRequest="35" />
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Margin="8,0,0,0"
+                                        HorizontalTextAlignment="Start"
+                                        Text="{Binding ItemName}"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="2"
+                                        Font="Bold"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding Quantity}"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <Button
+                BackgroundColor="{StaticResource RedTextColor}"
+                Command="{Binding GoToSignature}"
+                Text="{Binding LblEndControlNext, Mode=TwoWay}"
+                TextColor="{StaticResource ComponentBackgroundColor}"
+                VerticalOptions="EndAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

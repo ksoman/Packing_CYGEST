@@ -1,0 +1,287 @@
+﻿<ContentPage
+    x:Class="PackingCygest.View.LoadMenu"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PackingCygest.Controls"
+    BackgroundColor="#f5f5f5"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
+    </ContentPage.Padding>
+    <ContentPage.Content>
+
+
+            <StackLayout>
+                <Grid Padding="5" BackgroundColor="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    Command="{Binding BackToPackingCygest}"
+                    HorizontalOptions="Start"
+                    Image="Back_button_arrow.png"
+                    VerticalOptions="Center" />
+
+                    <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontAttributes="Bold"
+                    FontSize="15"
+                    HorizontalTextAlignment="Center"
+                    Text="PackingCygest"
+                    TextColor="{StaticResource SecondaryTextColor}"
+                    VerticalTextAlignment="Center" />
+
+                <ActivityIndicator
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    IsEnabled="{Binding HasActivtyLoad, Mode=TwoWay}"
+                    IsRunning="{Binding HasActivtyLoad, Mode=TwoWay}"
+                    IsVisible="{Binding HasActivtyLoad, Mode=TwoWay}"
+                    Color="{StaticResource ActivityIndicatorColor}" />
+
+            </Grid>
+
+                <Grid
+                Margin="10,2,10,4"
+                Padding="10,4,10,4"
+                BackgroundColor="{StaticResource ComponentBackgroundColor}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="20" />
+                    </Grid.RowDefinitions>
+                    <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontSize="11"
+                    Text="{Binding LblFile, Mode=TwoWay}" />
+                    <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontSize="11"
+                    Text="{Binding LblClient, Mode=TwoWay}" />
+                    <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="11"
+                    HorizontalTextAlignment="Start"
+                    Text="{Binding LblFileNumber}" />
+                    <BoxView
+                    Grid.RowSpan="3"
+                    Grid.Column="2"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="0.95"
+                    Color="Gray" />
+                    <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontSize="11"
+                    HorizontalTextAlignment="Start"
+                    Text="{Binding LblClientNumber}" />
+                    <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    FontSize="11"
+                    Text="{Binding LblSize, Mode=TwoWay}" />
+                    <Label
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    FontSize="11"
+                    Text="{Binding Volume}" />
+                    <Label
+                    Grid.RowSpan="3"
+                    Grid.Column="3"
+                    FontSize="11"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding LoadingCountry}"
+                    VerticalOptions="Center" />
+
+
+                  <controls:SvgIcon
+                  Grid.RowSpan="3"
+                    Grid.Column="4"
+                    BackgroundColor="White"
+                    HorizontalOptions="Center"
+                    ResourceId="{Binding MyImagePath}"
+                    VerticalOptions="Center" />
+                    <Label
+                    Grid.RowSpan="3"
+                    Grid.Column="5"
+                    FontSize="11"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding DestinationCountry}"
+                    VerticalOptions="Center" />
+                </Grid>
+
+                <StackLayout
+                Padding="0,15,0,10"
+                HorizontalOptions="Center"
+                Orientation="Horizontal">
+                    <StackLayout
+                    BackgroundColor="{Binding NewItemButtonColour, Mode=TwoWay}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                        <BoxView HeightRequest="0.05" />
+                        <StackLayout
+                        BackgroundColor="White"
+                        HeightRequest="90"
+                        WidthRequest="140">
+                          <controls:SvgIcon
+                          Margin="10,15,10,10"
+                            HeightRequest="20"
+                            HorizontalOptions="Center"
+                            ResourceId="{Binding NewItemPath}"
+                            VerticalOptions="Center"
+                            WidthRequest="20" />
+                        <Label
+                            HorizontalOptions="Center"
+                            Text="{Binding LblNewItem, Mode=TwoWay}"
+                            VerticalOptions="End" />
+                        <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding AddItems}" NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+                       
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout
+                    BackgroundColor="{Binding EndPackingCygestButtonColour, Mode=TwoWay}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                        <BoxView HeightRequest="0.05" />
+                        <StackLayout
+                        BackgroundColor="White"
+                        HeightRequest="90"
+                        WidthRequest="140">
+                          <controls:SvgIcon
+                          Margin="10,15,10,10"
+                            HeightRequest="20"
+                            HorizontalOptions="Center"
+                            ResourceId="{Binding EndPackingCygestPath}"
+                            VerticalOptions="Center"
+                            WidthRequest="20" />
+                        <Label
+                            HorizontalOptions="Center"
+                            Text="{Binding LblEndPackingCygest, Mode=TwoWay}"
+                            VerticalOptions="End" />
+                        <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding EndPackingCygest}" NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+                        
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+
+
+                <!--
+                    <Button Text="New Item" HeightRequest="50" Grid.Row="0" Grid.Column="0"  BackgroundColor="White" TextColor="Black" Command="{Binding ToRooms}"/>
+                    <Button Text="End PackingCygest" HeightRequest="50" Grid.Column="1" Grid.Row="0" BackgroundColor="White" TextColor="Black" />-->
+                <ListView
+                x:Name="listView"
+                BackgroundColor="White"
+                ItemTapped="listView_ItemTapped"
+                ItemsSource="{Binding ListItems}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="5*" />
+                                        <ColumnDefinition Width="4*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+
+                                    <!--<controls:SvgIcon
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Aspect="AspectFit"
+                                    HeightRequest="20"
+                                    HorizontalOptions="Center"
+                                    
+                                    ResourceId="{Binding BoxSvg}"
+                                    VerticalOptions="Center"
+                                    WidthRequest="20" />-->
+
+                                  <controls:SvgIcon
+                                  Grid.Row="0"
+                                    Grid.Column="0"
+                                    HeightRequest="20"
+                                    HorizontalOptions="Center"
+                                    ResourceId="{Binding Type}"
+                                    VerticalOptions="Center"
+                                    WidthRequest="20" />
+
+                                    <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Margin="10,0,0,0"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Start"
+                                    Text="{Binding BarCode}"
+                                    VerticalOptions="Center"
+                                    VerticalTextAlignment="Center" />
+
+                                    <Label
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Margin="10,0,0,0"
+                                    HorizontalOptions="Start"
+                                    Text="{Binding RoomName}"
+                                    VerticalOptions="Center"
+                                    VerticalTextAlignment="Center" />
+
+                                    <controls:SvgIcon
+                                    Grid.Row="0"
+                                    Grid.Column="4"
+                                    HeightRequest="10"
+                                    HorizontalOptions="Center"
+                                    ResourceId="{Binding FillSvg}"
+                                    VerticalOptions="Center"
+                                    WidthRequest="10" />
+
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
+                <Button
+                 BackgroundColor="{StaticResource RedTextColor}"
+                 Text="{Binding LblSync}"
+                 TextColor="{StaticResource ComponentBackgroundColor}"
+                 Command="{Binding SyncLoadingDetails}"
+                 IsEnabled="{Binding EnableSyncButton}"
+                 VerticalOptions="EndAndExpand"
+                 />
+
+
+            </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

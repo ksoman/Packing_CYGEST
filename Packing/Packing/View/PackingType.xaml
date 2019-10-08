@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="PackingCygest.View.PackingCygestType"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PackingCygest.Controls"
+    xmlns:local="clr-namespace:PackingCygest.Utils"
+    BackgroundColor="{StaticResource BackgroundColor}"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Padding="5" BackgroundColor="{StaticResource ComponentBackgroundColor}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    Command="{Binding Back}"
+                    HorizontalOptions="Start"
+                    Image="Back_button_arrow.png"
+                    VerticalOptions="Center" />
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Text="{Binding LblAssignBarcode}"
+                    VerticalOptions="Center" />
+
+                <ActivityIndicator
+                    x:Name="CongifActivity"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    IsEnabled="False"
+                    IsRunning="False" />
+            </Grid>
+            
+            
+            <StackLayout
+                x:Name="BarcodeDigitStackLayout"
+                Margin="10"
+                BackgroundColor="{StaticResource ComponentBackgroundColor}"
+                HeightRequest="200">
+
+                <Label x:Name="BarcodeText"  FontSize="125" FontAttributes="Bold"  HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+
+            </StackLayout>
+
+
+
+            <StackLayout
+                x:Name="BarcodeScannerStackLayout"
+                Margin="10"
+                BackgroundColor="{StaticResource ComponentBackgroundColor}"
+                >
+                <Image
+                    HorizontalOptions="CenterAndExpand"
+                    Source="Barcode.png"
+                    VerticalOptions="CenterAndExpand"
+                    
+                    >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+
+         
+
+
+            <StackLayout Margin="10" Orientation="Horizontal" x:Name="StackButton">
+                <StackLayout
+                    BackgroundColor="White"
+                    HeightRequest="90"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    WidthRequest="160">
+
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        Text="{Binding Btn1Name}"
+                        TextColor="Black"
+                        VerticalOptions="CenterAndExpand" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Btn1Clicked}" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout
+                    BackgroundColor="White"
+                    HeightRequest="90"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    WidthRequest="160">
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        Text="{Binding Btn2Name}"
+                        TextColor="Black"
+                        VerticalOptions="CenterAndExpand" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Btn2Clicked}" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

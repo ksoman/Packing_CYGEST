@@ -1,0 +1,13 @@
+<svg width="50" height="33" viewBox="0 0 50 33">
+    <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" transform="translate(.793)">
+        <path stroke="#8A8B8C" d="M41.595 26.758h4.248a2.079 2.079 0 0 0 2.085-2.072V18.65c0-1.241-3.741-8.93-5.367-12.19a2.677 2.677 0 0 0-2.4-1.486H31.79V2.728A2.11 2.11 0 0 0 29.674.632H2.15A2.11 2.11 0 0 0 .034 2.735v21.95c0 1.145.934 2.073 2.086 2.073h4.4"/>
+        <path stroke="#E94B49" d="M16.188 26h15.747"/>
+        <path stroke="#8A8B8C" d="M31.935 26H16.188"/>
+        <ellipse cx="11.358" cy="26.758" stroke="#BC0100" rx="4.83" ry="4.8"/>
+        <ellipse cx="36.765" cy="26.758" stroke="#BC0100" rx="4.83" ry="4.8"/>
+        <ellipse cx="36.765" cy="26.758" stroke="#BC0100" rx="1.671" ry="1.661"/>
+        <ellipse cx="11.358" cy="26.758" stroke="#BC0100" rx="1.633" ry="1.623"/>
+        <path stroke="#BC0100" d="M43.85 15.886h-9.4V7.672h4.769c.473.001.904.274 1.104.701l3.526 7.513z"/>
+        <path stroke="#8A8B8C" d="M.349 18.583h31.44V4.96"/>
+    </g>
+</svg>

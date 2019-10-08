@@ -1,0 +1,119 @@
+<svg
+   xmlns="http://www.w3.org/2000/svg" width="37" height="35"  
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 65.31 42.25"   
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview30527"
+     showgrid="false"
+     inkscape:zoom="5.4509266"
+     inkscape:cx="2.8435533"
+     inkscape:cy="21.125"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg30525" />
+  <defs
+     id="defs30492">
+    <style
+       id="style30490">.cls-1{fill:none;stroke:#8a8b8c;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.65px;}</style>
+  </defs>
+ 
+  <g
+     id="Layer_2"
+     data-name="Layer 2"
+     transform="matrix(-1,0,0,1,65.3,0)">
+    <g
+       id="Icons">
+      <g
+         id="_8"
+         data-name="8">
+        <line
+           class="cls-1"
+           x1="43.41"
+           y1="35.119999"
+           x2="21.690001"
+           y2="35.119999"
+           id="line30496"
+           style="fill:none;stroke:#8a8b8c;stroke-width:1.64999998px;stroke-linecap:round;stroke-linejoin:round" />
+        <path
+           class="cls-1"
+           d="M 9.09,35.12 H 3.55 A 2.72,2.72 0 0 1 0.83,32.4 v -7.92 c 0,-1.63 4.88,-11.72 7,-16 A 3.49,3.49 0 0 1 11,6.51 H 22 V 3.58 a 2.76,2.76 0 0 1 2.71,-2.75 h 37 a 2.76,2.76 0 0 1 2.76,2.76 V 32.4 a 2.72,2.72 0 0 1 -2.72,2.72 H 56"
+           id="path30498"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#8a8b8c;stroke-width:1.64999998px;stroke-linecap:round;stroke-linejoin:round" />
+        <line
+           class="cls-1"
+           x1="21.690001"
+           y1="35.119999"
+           x2="43.41"
+           y2="35.119999"
+           id="line30500"
+           style="fill:none;stroke:#8a8b8c;stroke-width:1.64999998px;stroke-linecap:round;stroke-linejoin:round" />
+        <path
+           class="cls-1"
+           d="M 1.2,25.46 Z"
+           id="path30502"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#8a8b8c;stroke-width:1.64999998px;stroke-linecap:round;stroke-linejoin:round" />
+        <circle
+           class="cls-1"
+           cx="49.720001"
+           cy="35.119999"
+           r="6.3000002"
+           id="circle30504"
+           style="fill:none;stroke:#d72a27;stroke-width:1.64999998px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+        <circle
+           class="cls-1"
+           cx="15.39"
+           cy="35.119999"
+           r="6.3000002"
+           id="circle30506"
+           style="fill:none;stroke:#d72a27;stroke-width:1.64999998px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+        <circle
+           class="cls-1"
+           cx="15.39"
+           cy="35.119999"
+           r="2.4400001"
+           id="circle30508"
+           style="fill:none;stroke:#d72a27;stroke-width:1.64999998px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+        <circle
+           class="cls-1"
+           cx="49.720001"
+           cy="35.119999"
+           r="2.4400001"
+           id="circle30510"
+           style="fill:none;stroke:#d72a27;stroke-width:1.64999998px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+        <path
+           class="cls-1"
+           d="M 5.8,20.49 H 22 V 9.71 H 11.82 a 1.59,1.59 0 0 0 -1.44,0.92 z"
+           id="path30514"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#8a8b8c;stroke-width:1.64999998px;stroke-linecap:round;stroke-linejoin:round" />
+        <path
+           class="cls-1"
+           d="M 60.48,15.43 V 6 A 1.19,1.19 0 0 0 59.29,4.81 h -3.65"
+           id="path30518"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#8a8b8c;stroke-width:1.64999998px;stroke-linecap:round;stroke-linejoin:round" />
+        <polyline
+           class="cls-1"
+           points="11.61 16.64 13.07 13.17 15.39 13.17"
+           id="polyline30520"
+           style="fill:none;stroke:#d72a27;stroke-width:1.64999998px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+      </g>
+    </g>
+  </g>
+</svg>

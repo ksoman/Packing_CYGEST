@@ -1,0 +1,172 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>PackingCygest</AssemblyName>
+    <RootNamespace>PackingCygest</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ViewModel\RoomsPageViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Image\Add.svg" />
+    <None Remove="Image\addNew.svg" />
+    <None Remove="Image\AddUnselected.svg" />
+    <None Remove="Image\ags.jpg" />
+    <None Remove="Image\Barcode.PNG" />
+    <None Remove="Image\bedroom.png" />
+    <None Remove="Image\boat.svg" />
+    <None Remove="Image\box.svg" />
+    <None Remove="Image\complete.svg" />
+    <None Remove="Image\Configuration.svg" />
+    <None Remove="Image\end.svg" />
+    <None Remove="Image\end_Selected.svg" />
+    <None Remove="Image\Faible_Button.png" />
+    <None Remove="Image\Faible_Button_Red.png" />
+    <None Remove="Image\Fill.png" />
+    <None Remove="Image\fill.svg" />
+    <None Remove="Image\Haut_Button.png" />
+    <None Remove="Image\Haut_Button_Red.png" />
+    <None Remove="Image\High_Button.png" />
+    <None Remove="Image\High_Button_Red.png" />
+    <None Remove="Image\house.svg" />
+    <None Remove="Image\Low_Button.png" />
+    <None Remove="Image\Low_Button_Red.png" />
+    <None Remove="Image\Medium_Button.png" />
+    <None Remove="Image\Medium_Button_Red.png" />
+    <None Remove="Image\Moyen_Button.png" />
+    <None Remove="Image\Moyen_Button_Red.png" />
+    <None Remove="Image\Newarrow.png" />
+    <None Remove="Image\plane.svg" />
+    <None Remove="Image\route.svg" />
+    <None Remove="Image\Selected.svg" />
+    <None Remove="Image\Small_arrow.svg" />
+    <None Remove="Image\truck.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Image\Add.svg" />
+    <EmbeddedResource Include="Image\addNew.svg" />
+    <EmbeddedResource Include="Image\AddUnselected.svg" />
+    <EmbeddedResource Include="Image\ags.jpg" />
+    <EmbeddedResource Include="Image\Barcode.PNG" />
+    <EmbeddedResource Include="Image\bedroom.png" />
+    <EmbeddedResource Include="Image\boat.svg" />
+    <EmbeddedResource Include="Image\box.svg" />
+    <EmbeddedResource Include="Image\complete.svg" />
+    <EmbeddedResource Include="Image\Configuration.svg" />
+    <EmbeddedResource Include="Image\end.svg" />
+    <EmbeddedResource Include="Image\end_Selected.svg" />
+    <EmbeddedResource Include="Image\Faible_Button.png" />
+    <EmbeddedResource Include="Image\Faible_Button_Red.png" />
+    <EmbeddedResource Include="Image\Fill.png" />
+    <EmbeddedResource Include="Image\fill.svg" />
+    <EmbeddedResource Include="Image\Haut_Button.png" />
+    <EmbeddedResource Include="Image\Haut_Button_Red.png" />
+    <EmbeddedResource Include="Image\High_Button.png" />
+    <EmbeddedResource Include="Image\High_Button_Red.png" />
+    <EmbeddedResource Include="Image\house.svg" />
+    <EmbeddedResource Include="Image\Low_Button.png" />
+    <EmbeddedResource Include="Image\Low_Button_Red.png" />
+    <EmbeddedResource Include="Image\Medium_Button.png" />
+    <EmbeddedResource Include="Image\Medium_Button_Red.png" />
+    <EmbeddedResource Include="Image\Moyen_Button.png" />
+    <EmbeddedResource Include="Image\Moyen_Button_Red.png" />
+    <EmbeddedResource Include="Image\Newarrow.png" />
+    <EmbeddedResource Include="Image\plane.svg" />
+    <EmbeddedResource Include="Image\route.svg" />
+    <EmbeddedResource Include="Image\Selected.svg" />
+    <EmbeddedResource Include="Image\Small_arrow.svg" />
+    <EmbeddedResource Include="Image\truck.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FubarCoder.RestSharp.Portable" Version="3.3.0" />
+    <PackageReference Include="SignaturePad.Xamarin.Forms.PCL" Version="1.0.0.1" />
+    <PackageReference Include="SkiaSharp.Extended" Version="1.60.0" />
+    <PackageReference Include="SkiaSharp.Svg" Version="1.60.0" />
+    <PackageReference Include="SkiaSharp.Views" Version="1.68.0" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.56.1" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
+    <PackageReference Include="Xamarin.Forms" Version="2.4.0.280" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+    <PackageReference Include="Xamarin.Forms.CarouselView" Version="2.3.0-pre2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Packing.Shared\Packing.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\CompletedPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\ConfigurationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\DelControls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\DelFinalSummary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\DelItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\ItemSelection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\LoadEndControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\LoadingOption.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\LoadMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\MissingBarcodePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\PackingCygest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\PackingCygestType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\PhotoAndCommentPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\RoomSelection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\RubricSelection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\Signature.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\Synchro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\TakePhotoMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+</Project>

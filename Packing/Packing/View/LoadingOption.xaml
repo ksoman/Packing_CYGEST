@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PackingCygest.View.LoadingOption"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource BackgroundColor}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Grid Padding="5" BackgroundColor="{StaticResource ComponentBackgroundColor}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    Command="{Binding Back}"
+                    HorizontalOptions="Start"
+                    Image="Back_button_arrow.png"
+                    VerticalOptions="Center" />
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="Small"
+                    HorizontalOptions="Center"
+                    Text="{Binding LblSelectedItem, Mode=TwoWay}"
+                    VerticalOptions="Center" />
+
+                <ActivityIndicator
+                    x:Name="CongifActivity"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    IsEnabled="False"
+                    IsRunning="False" />
+            </Grid>
+
+            <Label
+                HorizontalOptions="Center"
+                IsVisible="{Binding VisibilityMechanicalState}"
+                Text="{Binding LblMechanicalState, Mode=TwoWay}"
+                VerticalOptions="Center" />
+
+            <StackLayout
+                Padding="0,15,0,10"
+                HorizontalOptions="Center"
+                IsVisible="{Binding VisibilityMechanicalState}"
+                Orientation="Horizontal">
+                <StackLayout
+                    BackgroundColor="White"
+                    HeightRequest="90"
+                    WidthRequest="140">
+                    <Image
+                        Margin="0,10,10,0"
+                        Aspect="AspectFit"
+                        HeightRequest="20"
+                        HorizontalOptions="End"
+                        Source="{Binding KnownImageSource, Mode=TwoWay}"
+                        VerticalOptions="Start"
+                        WidthRequest="20" />
+
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="{Binding LblKnown, Mode=TwoWay}"
+                        VerticalOptions="Center" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding KnownCommand}" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout
+                    BackgroundColor="White"
+                    HeightRequest="90"
+                    WidthRequest="140">
+                    <Image
+                        Margin="0,10,10,0"
+                        Aspect="AspectFit"
+                        HeightRequest="20"
+                        HorizontalOptions="End"
+                        Source="{Binding UnKnownImageSource, Mode=TwoWay}"
+                        VerticalOptions="Start"
+                        WidthRequest="20" />
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="{Binding LblUnknown, Mode=TwoWay}"
+                        VerticalOptions="Center" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding UnKnownCommand}" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
+
+            <Label HorizontalOptions="Center" Text="{Binding LblDismounting, Mode=TwoWay}" IsVisible="{Binding VisibilityDismounting}" />
+
+            <StackLayout
+                Padding="0,15,0,10"
+                HorizontalOptions="Center"
+                IsVisible="{Binding VisibilityDismounting}"
+                Orientation="Horizontal">
+                <StackLayout
+                    BackgroundColor="White"
+                    HeightRequest="90"
+                    WidthRequest="140">
+                    <Image
+                        Margin="0,10,10,0"
+                        Aspect="AspectFit"
+                        HeightRequest="20"
+                        HorizontalOptions="End"
+                        Source="{Binding DismountingKnownImageSource, Mode=TwoWay}"
+                        VerticalOptions="Start"
+                        WidthRequest="20" />
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="{Binding LblClient, Mode=TwoWay}"
+                        VerticalOptions="Center" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding DismountingKnownCommand}" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout
+                    BackgroundColor="White"
+                    HeightRequest="90"
+                    WidthRequest="140">
+                    <Image
+                        Margin="0,10,10,0"
+                        Aspect="AspectFit"
+                        HeightRequest="20"
+                        HorizontalOptions="End"
+                        Source="{Binding DismountingUnKnownImageSource, Mode=TwoWay}"
+                        VerticalOptions="Start"
+                        WidthRequest="20" />
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="{Binding LblMover, Mode=TwoWay}"
+                        VerticalOptions="Center" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding DismountingUnKnownCommand}" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
+
+            <Label HorizontalOptions="Center" Text="{Binding LblReassembling, Mode=TwoWay}" IsVisible="{Binding VisibilityReassembling}"/>
+
+            <StackLayout
+                Padding="0,15,0,10"
+                HorizontalOptions="Center"
+                IsVisible="{Binding VisibilityReassembling}"
+                Orientation="Horizontal">
+                <StackLayout
+                    BackgroundColor="White"
+                    HeightRequest="90"
+                    WidthRequest="140">
+                    <Image
+                        Margin="0,10,10,0"
+                        Aspect="AspectFit"
+                        HeightRequest="20"
+                        HorizontalOptions="End"
+                        Source="{Binding ReAssemblingKnownImageSource, Mode=TwoWay}"
+                        VerticalOptions="Start"
+                        WidthRequest="20" />
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="{Binding LblClient, Mode=TwoWay}"
+                        TextColor="{Binding KnownTextColor}"
+                        VerticalOptions="Center" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ReAssemblingKnownCommand}" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout
+                    BackgroundColor="White"
+                    HeightRequest="90"
+                    WidthRequest="140">
+                    <Image
+                        Margin="0,10,10,0"
+                        Aspect="AspectFit"
+                        HeightRequest="20"
+                        HorizontalOptions="End"
+                        Source="{Binding ReAssemblingUnKnownImageSource, Mode=TwoWay}"
+                        VerticalOptions="Start"
+                        WidthRequest="20" />
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="{Binding LblMover, Mode=TwoWay}"
+                        VerticalOptions="Center" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ReAssemblingUnKnownCommand}" NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Button
+                    BackgroundColor="{StaticResource RedTextColor}"
+                    Command="{Binding NextCommand}"
+                    Text="{Binding NextButton}"
+                    TextColor="{StaticResource ComponentBackgroundColor}" />
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

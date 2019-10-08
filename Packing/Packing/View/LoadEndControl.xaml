@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PackingCygest.View.LoadEndControl"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PackingCygest.Controls"
+  
+    BackgroundColor="{StaticResource BackgroundColor}"
+    NavigationPage.HasNavigationBar="False">
+
+   
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Padding="5" BackgroundColor="{StaticResource ComponentBackgroundColor}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    BackgroundColor="{StaticResource ComponentBackgroundColor}"
+                    HorizontalOptions="Start"
+                     VerticalOptions="Center" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Text="{Binding LblLoadEndControlTitle}"
+                    VerticalOptions="Center" />
+
+                <ActivityIndicator
+                    x:Name="CongifActivity"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    IsEnabled="False"
+                    IsRunning="False" />
+            </Grid>
+          
+            <StackLayout Margin="10,4,10,4" Spacing="20">
+                <ListView
+                    x:Name="controlListView"
+                    BackgroundColor="White"
+                    ItemsSource="{Binding ControlItem}"
+                    ItemSelected="ListView_ItemSelected"
+                    ItemTapped="ListView_ItemTapped"
+                    RowHeight="50">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="7*" />
+                                        <ColumnDefinition Width="2*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        VerticalOptions="Center"
+                                        HorizontalTextAlignment="Start"
+                                        Margin="10,0,0,0"
+                                        Text="{Binding ControlName}"
+                                        VerticalTextAlignment="Center" />
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Font="Bold"
+                                        VerticalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding ControlItemCount}"
+                                        VerticalTextAlignment="Center" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <StackLayout Margin="10,4,10,4" Spacing="20">
+                <ListView
+                    BackgroundColor="White"
+                    ItemsSource="{Binding ItemList}"
+                    RowHeight="50">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="3*" />
+                                        <ColumnDefinition Width="10*" />
+                                        <ColumnDefinition Width="2*" />
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <controls:SvgIcon
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        HeightRequest="35"
+                                        HorizontalOptions="Center"
+                                        ResourceId="{Binding SvgImage}"
+                                        VerticalOptions="Center"
+                                        WidthRequest="35" />
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        HorizontalTextAlignment="Start"
+                                        Text="{Binding Name}"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="2"
+                                        Font="Bold"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding Total}"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Button
+                    BackgroundColor="{StaticResource RedTextColor}"
+                    Command="{Binding GoToSignature}"
+                    IsEnabled="{Binding SyncComplete, Mode=TwoWay}"
+                    Text="{Binding LblEndControlNext}"
+                    TextColor="{StaticResource ComponentBackgroundColor}" />
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

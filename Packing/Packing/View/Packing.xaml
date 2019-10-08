@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PackingCygest.View.PackingCygest"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PackingCygest.Controls"
+    BackgroundColor="White"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.Platforms>
+                <On Platform="iOS" Value="0, 40, 0, 0" />
+                <On Platform="Android" Value="0, 5, 0, 0" />
+            </OnPlatform.Platforms>
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <StackLayout
+                x:Name="PackingCygestPageLayout"
+                Padding="-1,-1,-1,-1"
+                IsEnabled="{Binding PackingCygestPageLayoutVisibility}"
+                Opacity="{Binding PackingCygestPageLayoutOpacity}">
+
+                <Grid Padding="0" BackgroundColor="{StaticResource WhiteBackColour}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <controls:SvgIcon
+                        
+                        />
+                    <controls:SvgIcon
+                      Margin="0,15,0,0"
+                      HeightRequest="40"
+                      Grid.Row="0"
+                      Grid.Column="2"
+                      HorizontalOptions="Center"
+                      ResourceId="{Binding ConfigurationImage}"
+                    
+                      VerticalOptions="Center"
+                      WidthRequest="40">
+                        <controls:SvgIcon.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Back}" />
+                        </controls:SvgIcon.GestureRecognizers>
+                    </controls:SvgIcon>
+
+
+                </Grid>
+
+                <Grid BackgroundColor="{StaticResource WhiteBackColour}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Image
+                        x:Name="Logo"
+                        Grid.Row="0"
+                        Aspect="AspectFit"
+                        HeightRequest="75"
+                        Source="ags.png"
+                        WidthRequest="75" />
+
+                    <Label
+                        x:Name="CaptionLogo"
+                        Grid.Row="1"
+                        Margin="50,0,50,0"
+                        FontAttributes="Bold"
+                        FontFamily="OpenSans"
+                        FontSize="Large"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        TextColor="{StaticResource PrimaryText}"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center">
+                        Worldwide movers, you deserve the best.
+                    </Label>
+
+                    <Label
+                        x:Name="AppName"
+                        Grid.Row="2"
+                        FontFamily="OpenSans"
+                        FontSize="Medium"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        TextColor="{StaticResource PrimaryText}"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center">
+                        PACKAGING APP
+                    </Label>
+
+                </Grid>
+
+                <Grid>
+                    <BoxView
+                        HeightRequest="4"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Center"
+                        Color="{StaticResource PrimaryText}" />
+                </Grid>
+
+
+
+                <Grid
+                    Padding="25,40,25,20"
+                    BackgroundColor="{StaticResource GreyBackColour}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="3*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+
+                    <StackLayout
+                        BackgroundColor="White"
+                        HeightRequest="100"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="Center"
+                        WidthRequest="160"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Padding="0, 10, 0, 0"
+                        Margin="0,0,8,0">
+                        
+                        <controls:SvgIcon
+                        BackgroundColor="White"
+                        HeightRequest="50"
+                        HorizontalOptions="Center"
+                        ResourceId="{Binding NewLoadingImage}"
+                        VerticalOptions="Center"
+                        WidthRequest="50">
+
+                        </controls:SvgIcon>
+
+                        <Label
+                            HorizontalOptions="CenterAndExpand"
+                            Text="{Binding Loading}"
+                            FontFamily="OpenSans"
+                            FontSize="Small"
+                            TextColor="{StaticResource SecondaryTextColor}"
+                            VerticalOptions="CenterAndExpand" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
+                        </StackLayout.GestureRecognizers>
+
+                    </StackLayout>
+
+                    <StackLayout
+                        BackgroundColor="White"
+                        HeightRequest="100"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        WidthRequest="160"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Padding="0, 10, 0, 0">
+
+                        <controls:SvgIcon
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        BackgroundColor="White"
+                        HeightRequest="50"
+                        HorizontalOptions="Center"
+                        ResourceId="{Binding NewDeliveryImage}"
+                        VerticalOptions="Center"
+                        WidthRequest="50">
+
+                        </controls:SvgIcon>
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        Text="{Binding Delivery}"
+                        FontFamily="OpenSans"
+                        FontSize="Small"
+                        TextColor="{StaticResource SecondaryTextColor}"
+                        VerticalOptions="CenterAndExpand" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Delivery" NumberOfTapsRequired="1" />
+                        </StackLayout.GestureRecognizers>
+
+                    </StackLayout>
+
+                </Grid>
+
+            </StackLayout>
+            <StackLayout
+                x:Name="StackAct"
+                AbsoluteLayout.LayoutBounds="0.5,0.5,600,400"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                BackgroundColor="White"
+                HorizontalOptions="Center"
+                IsEnabled="{Binding StackLayoutVisibility}"
+                IsVisible="{Binding StackLayoutVisibility}"
+                VerticalOptions="Center">
+                <ActivityIndicator
+                    x:Name="ActivityLayout"
+                    HorizontalOptions="CenterAndExpand"
+                    IsEnabled="{Binding ActivityIndicatorVisibility}"
+                    IsRunning="{Binding ActivityIndicatorVisibility}"
+                    IsVisible="{Binding ActivityIndicatorVisibility}"
+                    Color="#bc0100" />
+                <Label
+                    x:Name="LblLoadingText"
+                    IsVisible="{Binding LblLoadingTextVisibility}"
+                    Text="{Binding LoadingData}"
+                    FontSize="Large"
+                    TextColor="#bc0100" />
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
